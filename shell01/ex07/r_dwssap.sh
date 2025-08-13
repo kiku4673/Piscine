@@ -1,0 +1,1 @@
+cat /etc/passwd | grep -v '^#' | sed -n '2~2p' | while read -r line; do echo "$line" | cut -d: -f1 | rev; done | sort -r | head -n $((FT_LINE2 - FT_LINE1 + 1)) | tail -n $((FT_LINE2 - FT_LINE1 + 1)) | tr '\n' ',' | sed 's/,$//' | sed 's/,/, /g' | sed 's/.$/./'
