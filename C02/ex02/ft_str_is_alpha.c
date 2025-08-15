@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyamanak <kyamanak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 14:43:46 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/13 16:36:00 by kyamanak         ###   ########.fr       */
+/*   Updated: 2025/08/15 11:07:33 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')))
+		if ((str[i] < 'A' || str[i] > 'Z')
+			&& (str[i] < 'a' || str[i] > 'z'))
 		{
 			return (0);
 		}

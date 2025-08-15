@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+        */
+/*   By: kyamanak <kyamanak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 13:57:48 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/15 10:32:53 by kyamanak         ###   ########.fr       */
+/*   Created: 2025/08/09 17:28:25 by kyamanak          #+#    #+#             */
+/*   Updated: 2025/08/10 15:22:04 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_print_reverse_alphabet(void)
 {
-	unsigned int	i;
+	char	c;
 
-	i = 0;
-	while (src[i] != '\0' && i < n)
+	c = 'z';
+	while (c >= 'a')
 	{
-		dest[i] = src[i];
-		i++;
+		write(1, &c, 1);
+		c--;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
 }
+
+// int main(void)
+// {
+//     ft_print_reverse_alphabet();
+// }

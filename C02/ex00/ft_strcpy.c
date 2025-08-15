@@ -6,7 +6,7 @@
 /*   By: kyamanak <kyamanak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 17:40:30 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/13 10:56:47 by kyamanak         ###   ########.fr       */
+/*   Updated: 2025/08/14 10:59:17 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ char	*ft_strcpy(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
-
 }

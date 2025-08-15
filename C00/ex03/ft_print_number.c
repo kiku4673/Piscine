@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_print_number.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+        */
+/*   By: kyamanak <kyamanak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 13:57:48 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/15 10:32:53 by kyamanak         ###   ########.fr       */
+/*   Created: 2025/08/07 16:40:56 by kyamanak          #+#    #+#             */
+/*   Updated: 2025/08/10 16:22:48 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_print_numbers(void)
 {
-	unsigned int	i;
+	char	n;
 
-	i = 0;
-	while (src[i] != '\0' && i < n)
+	n = '0';
+	while (n <= '9')
 	{
-		dest[i] = src[i];
-		i++;
+		write(1, &n, 1);
+		n++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
 }
+
+// 	int	main(void)
+// {
+// 	ft_print_number();
+// }

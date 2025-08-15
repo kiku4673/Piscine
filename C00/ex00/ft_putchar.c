@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+        */
+/*   By: kyamanak <kyamanak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 13:57:48 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/15 10:32:53 by kyamanak         ###   ########.fr       */
+/*   Created: 2025/08/09 17:27:38 by kyamanak          #+#    #+#             */
+/*   Updated: 2025/08/09 17:27:43 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_putchar(char c)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] != '\0' && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	write(1, &c, 1);
 }
+
+// int	main(void)
+// {
+// 	ft_putchar ('A');
+// }

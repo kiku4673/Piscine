@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+        */
+/*   By: kyamanak <kyamanak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 13:57:48 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/15 10:32:53 by kyamanak         ###   ########.fr       */
+/*   Created: 2025/08/07 18:27:29 by kyamanak          #+#    #+#             */
+/*   Updated: 2025/08/10 10:04:15 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_is_negative(int n)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] != '\0' && i < n)
+	if (n < 0)
 	{
-		dest[i] = src[i];
-		i++;
+		write(1, "N", 1);
 	}
-	while (i < n)
+	else
 	{
-		dest[i] = '\0';
-		i++;
+		write(1, "P", 1);
 	}
-	return (dest);
 }
+
+// int	main(void)
+// {
+// 	ft_is_negative(-5);
+// 	write(1, "\n", 1);
+// 	ft_is_negative(0);
+// 	write(1, "\n", 1);
+// 	ft_is_negative(7);
+// 	write(1, "\n", 1);
+// }
