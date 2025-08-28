@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 19:09:45 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/26 20:52:00 by kyamanak         ###   ########.fr       */
+/*   Created: 2025/08/27 17:34:06 by kyamanak          #+#    #+#             */
+/*   Updated: 2025/08/27 20:19:00 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-char	*ft_strdup(char *src)
+struct s_stock_str *ft_strs_to_tab(int ac, char **av);
+
+typedef struct s_stock_str
 {
-	char	*str;
-	int		len;
-	int		i;
+    int		size;
+    char	*str;
+    char	*copy;
+} t_stock_str;
 
-	len = 0;
-	while (src[len])
-		len++;
-	str = malloc(len + 1);
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (i != len)
-	{
-		str[i] = src[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
+#endif

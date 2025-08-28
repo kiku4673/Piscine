@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 19:09:45 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/26 20:52:00 by kyamanak         ###   ########.fr       */
+/*   Created: 2025/08/28 15:49:47 by kyamanak          #+#    #+#             */
+/*   Updated: 2025/08/28 15:57:52 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_strdup(char *src)
+void	ft_putnbr(int nb)
 {
-	char	*str;
-	int		len;
-	int		i;
+	char	c;
 
-	len = 0;
-	while (src[len])
-		len++;
-	str = malloc(len + 1);
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (i != len)
+	if (nb == -2147483648)
 	{
-		str[i] = src[i];
-		i++;
+		write (1, "-2147483648", 11);
+		return ;
 	}
-	str[i] = '\0';
-	return (str);
+	if (nb < 0)
+	{
+		write (1, "-", 1);
+		nb = -nb;
+	}
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	c = nb % 10 + '0';
+	write (1, &c, 1);
 }

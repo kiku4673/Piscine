@@ -1,0 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    a                                                  :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/08/28 00:02:56 by kyamanak          #+#    #+#              #
+#    Updated: 2025/08/28 00:03:03 by kyamanak         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+gcc -Wall -Wextra -Werror -c ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c
+ar rc libft.a ft_putchar.o ft_swap.o ft_putstr.o ft_strlen.o ft_strcmp.o
+ranlib libft.a

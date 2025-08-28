@@ -1,58 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_show_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/09 14:25:11 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/28 15:48:01 by kyamanak         ###   ########.fr       */
+/*   Created: 2025/08/27 17:43:47 by kyamanak          #+#    #+#             */
+/*   Updated: 2025/08/27 20:09:06 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "ft_stock_str.h"
 
-void	ft_putchar(char c)
+static void	ft_putnbr(int n)
 {
+	char	c;
+
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	c = (n % 10) + '0';
 	write(1, &c, 1);
 }
 
-void	ft_putnums(int a, int b)
-{
-	ft_putchar('0' + a / 10);
-	ft_putchar('0' + a % 10);
-	ft_putchar(' ');
-	ft_putchar('0' + b / 10);
-	ft_putchar('0' + b % 10);
-}
-
-void	ft_putcomma(void)
-{
-	ft_putchar(',');
-	ft_putchar(' ');
-}
-
-void	ft_print_comb2(void)
+static void	ft_putstr(char *str)
 {
 	int	i;
-	int	j;
 
-	i = -1;
-	while (++i < 99)
+	i = 0;
+	if (!str)
+		return ;
+	while (str[i])
 	{
-		j = i;
-		while (++j < 100)
-		{
-			ft_putnums(i, j);
-			if (i != 98 || j != 99)
-			{
-				ft_putcomma();
-			}
-		}
+		write(1, &str[i], 1);
+		i++;
 	}
 }
 
-// int	main(void)
-// {
-// 	ft_print_comb2();
-// }
+void	ft_show_tab(struct s_stock_str *par)
+{
+	int	i;
+
+	i = 0;
+	while (par[i].str != 0)
+	{
+		ft_putstr(par[i].str);
+		write(1, "\n", 1);
+		ft_putnbr(par[i].size);
+		write(1, "\n", 1);
+		ft_putstr(par[i].copy);
+		write(1, "\n", 1);
+		i++;
+	}
+}

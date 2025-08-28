@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   .main07.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyamanak <yamanak@student.42tokyo.jp>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 19:09:45 by kyamanak          #+#    #+#             */
-/*   Updated: 2025/08/26 20:52:00 by kyamanak         ###   ########.fr       */
+/*   Created: 2025/08/28 15:58:37 by kyamanak          #+#    #+#             */
+/*   Updated: 2025/08/28 15:59:05 by kyamanak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_strdup(char *src)
+void	ft_putnbr(int nb);
+
+int	main(void)
 {
-	char	*str;
-	int		len;
-	int		i;
-
-	len = 0;
-	while (src[len])
-		len++;
-	str = malloc(len + 1);
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (i != len)
-	{
-		str[i] = src[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	ft_putnbr(42);
+	write(1, "\n", 1);
+	ft_putnbr(-42);
+	write(1, "\n", 1);
+	ft_putnbr(0);
+	write(1, "\n", 1);
+	ft_putnbr(123456789);
+	write(1, "\n", 1);
+	ft_putnbr(-2147483648);
+	write(1, "\n", 1);
+	return (0);
 }
